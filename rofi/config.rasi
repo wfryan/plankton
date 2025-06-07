@@ -1,0 +1,18 @@
+configuration {
+    display-drun: "Applications:";
+    display-window: "Windows:";
+    drun-display-format: "{name}";
+    modi: "window,run,drun";
+}
+
+window{
+    width: 30%;
+    border: 2px;
+    border-color: #88c0d0;
+    border-radius: 10px;
+}
+
+listview{
+    lines: 10;
+    columns: 1;
+}
