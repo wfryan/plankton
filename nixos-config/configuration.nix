@@ -13,15 +13,14 @@
 
   # Enable flakes and nixf-command
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  programs.nix-ld.enable = true;
-  programs.nix-ld = {
-    libraries = [
-      pkgs.clang-tools
-      pkgs.sqlite
-    ];
-  };
+
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+  }.;
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "Swampert"; # Define your hostname.
@@ -130,7 +129,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # GO XLR UTILITY
   services.goxlr-utility.enable = true;
   #Hyprland
@@ -161,61 +160,41 @@
 	dedicatedServer.openFirewall = true;
 	localNetworkGameTransfers.openFirewall = true;
 };
+
+  # System-level services and programs
+
+  services.tumbler.enable = true;
+  services.gvfs.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim
-    ripgrep
-    wget
-    git
-    ghostty #Wezterm at some point
-    waybar
-    rofi-wayland
-    wl-clipboard
-    hyprland
-    firefox
-    yazi
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    nodejs
-    pyright
-    typescript-language-server
-    jdt-language-server
-    lua-language-server
-    rust-analyzer
-    xfce.thunar-volman
-    xfce.tumbler
-    ffmpegthumbnailer
-    gvfs
-    zsh
-    starship
-    ffmpeg
-    grimblast
-    pyprland
-    pkgs.discord
-    pkgs.kitty
-    swww
-    python3
-    go
-    libsForQt5.qt5ct
-    nitch
-    hyprlock
-    nwg-dock-hyprland
-    zathura
-    jetbrains-mono
-    goxlr-utility
-    home-manager
-    clang-tools
-    zig
-    rustc
-    cargo
-    rustup
-    clang
-    sqlite
-    sqlite-utils
-    cmake
-      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+ environment.systemPackages = with pkgs; [
+    # Base system tools
+  neovim
+  # System-level tools
+  git
+  waybar
+  rofi-wayland
+  wl-clipboard
+  hyprland
+  firefox
+  yazi
+  xfce.thunar
+  xfce.thunar-archive-plugin
+  xfce.thunar-volman
+  xfce.tumbler
+  ffmpegthumbnailer
+  gvfs
+  zsh
+  ffmpeg
+  grimblast
+  pyprland
+  swww
+  hyprlock
+  nwg-dock-hyprland
+  goxlr-utility
+  clang-tools # Could be in home.nix too
+  sqlite
+  sqlite-utils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
