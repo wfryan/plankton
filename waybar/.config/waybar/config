@@ -1,0 +1,57 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing":4,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "cpu", "memory", "battery", "custom/logout", "tray"],
+
+    "reload_style_on_change": true,
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+	"custom/logout": {
+		"format": "⏻",
+		"tooltip": false,
+		"on-click": "wlogout"
+	},
+    "clock": {
+    "format": "{:%I:%M %p}"
+    },
+
+    "network":{
+        "format-wifi": "WiFi {signalStrength}%",
+        "format-ethernet": "ETH",
+        "format-disconnected": "Disconnected"
+    },
+
+    "cpu": {
+        "format": "CPU {usage}%"
+    },
+
+    "memory": {
+        "format": "MEM {}%"
+    },
+
+	"battery": {
+		"bat": "BAT0",
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 5
+        },
+		"format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
+        "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
+        "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
+        "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+        "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+        "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
+        "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{time}"
+	}
+}
