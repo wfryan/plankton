@@ -1,0 +1,34 @@
+# ~/.config/wofi/config
+
+# ===================
+# | General Options |
+# ===================
+# show=drun allows you to launch applications. Other modes include run and dmenu.
+show=drun
+prompt=Launch:
+
+# =================
+# | Style Options |
+# =================
+# You can point to a different stylesheet here.
+# style=~/.config/wofi/my-other-style.css
+
+# Make Wofi look like a normal window.
+normal_window=true
+
+# =================
+# | Layout Options |
+# =================
+width=50%
+height=40%
+# You can also use pixels, e.g., width=600
+
+# xoffset and yoffset can be used to move Wofi around.
+# yoffset=-100
+
+# ========================
+# | Other useful options |
+# ========================
+# hide_scroll=true
+# insensitive=true # Makes search case-insensitive
+# image_size=32

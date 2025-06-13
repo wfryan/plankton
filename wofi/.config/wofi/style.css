@@ -1,0 +1,65 @@
+/* ~/.config/wofi/style.css */
+
+/* Use @define-color to create color variables */
+@define-color background      #282c34;
+@define-color foreground      #abb2bf;
+@define-color selection-bg    #3b4048;
+@define-color selection-fg    #ffffff;
+@define-color border-color    #61afef; /* One Dark Blue */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 16px;
+}
+
+window {
+    background-color: @background;
+    border-radius: 10px;
+    border: 2px solid @border-color;
+}
+
+/* The search bar */
+#input {
+    margin: 10px;
+    padding: 8px;
+    background-color: @selection-bg;
+    color: @foreground;
+    border: none;
+    border-radius: 5px;
+}
+
+/* The box containing all the results */
+#inner-box {
+    margin: 0 10px;
+}
+
+/* The scrollable area */
+#scroll {
+    margin-bottom: 10px;
+}
+
+/* A single entry in the list */
+#entry {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* The currently selected entry */
+#entry:selected {
+    background-color: @selection-bg;
+}
+
+/* The icon of an entry */
+#img {
+    margin-right: 10px;
+}
+
+/* The text of an entry */
+#text {
+    color: @foreground;
+}
+
+/* The text of the selected entry */
+#entry:selected #text {
+    color: @selection-fg;
+}
