@@ -9,7 +9,6 @@ follow_symlinks = true
 # Which is equivalent to
 format = """
 $username\
-$hostname\
 $localip\
 $shlvl\
 $singularity\
@@ -99,10 +98,15 @@ $os\
 $container\
 $netns\
 $shell\
+$hostname\
 $character"""
 # Replace the '❯' symbol in the prompt with '➜'
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[➜](bold green)'# The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+[hostname]
+ssh_only = false
+format = "[$hostname use ](bold blue)"
+[character] # The name of the module wen are configuring is 'character'
+success_symbol = "[➜](bold green)"# The 'success_symbol' segment is being set to '➜' with the color 'bold green'
 error_symbol = '[➜](bold red)'
 
 # Disable the package module, hiding it from the prompt completely
