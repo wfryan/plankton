@@ -27,9 +27,21 @@
 		"on-click": "wlogout"
 	},
     "clock": {
-    "format": "{:%I:%M %p}"
+       "format": "{:%I:%M %p}",
+       "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n{calendar}",
+       "calendar": {
+           "mode": "month",
+           "mode-mon-col": 3,
+           "weeks-pos": "right",
+           "on-scroll": 1,
+           "format": {
+              "months": "<span color='#ff6699'><b>{}</b></span>",
+              "days": "<span color='#cdd6f4'>{}</span>",
+              "weekdays": "<span color='#74c7ec'><b>{}</b></span>",
+              "today": "<span color='#f9e2af'><b><u>{}</u></b></span>"
+          }
+	   }
     },
-
     "network":{
         "format-wifi": "WiFi {signalStrength}%",
         "format-ethernet": "ETH",
