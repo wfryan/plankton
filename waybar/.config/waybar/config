@@ -5,7 +5,7 @@
     "spacing":4,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "cpu", "memory", "battery", "custom/logout", "tray"],
+    "modules-right": ["network", "cpu", "pulseaudio", "battery", "custom/logout", "tray"],
 
     "reload_style_on_change": true,
 
@@ -35,17 +35,20 @@
            "weeks-pos": "right",
            "on-scroll": 1,
            "format": {
-              "months": "<span color='#ff6699'><b>{}</b></span>",
-              "days": "<span color='#cdd6f4'>{}</span>",
-              "weekdays": "<span color='#74c7ec'><b>{}</b></span>",
-              "today": "<span color='#f9e2af'><b><u>{}</u></b></span>"
+              "months": "<span><b>{}</b></span>",
+              "days": "<span>{}</span>",
+              "weekdays": "<span><b>{}</b></span>",
+              "today": "<span><b><u>{}</u></b></span>"
           }
 	   }
     },
-    "network":{
-        "format-wifi": "WiFi {signalStrength}%",
-        "format-ethernet": "ETH",
-        "format-disconnected": "Disconnected"
+    "network": {
+      "format-wifi": "<span size='13000'>  </span>{essid}",
+      "format-ethernet": "<span size='13000'>󰤭  </span> Disconnected",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": "<span size='13000'>  </span>Disconnected",
+      "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
+	  "on-click": "networkmanager_dmenu",
     },
 
     "cpu": {
@@ -63,14 +66,23 @@
             "warning": 30,
             "critical": 5
         },
-		"format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
-        "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
-        "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
-        "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-        "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-        "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
-        "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+		"format": "<span size='13000'>{icon} </span> {capacity}%",
+        "format-warning": "<span size='13000'>{icon} </span> {capacity}%",
+        "format-critical": "<span size='13000'>{icon} </span> {capacity}%",
+        "format-charging": "<span size='13000'> </span>{capacity}%",
+        "format-plugged": "<span size='13000'> </span>{capacity}%",
+        "format-alt": "<span size='13000'>{icon} </span> {time}",
+        "format-full": "<span size='13000'> </span>{capacity}%",
         "format-icons": ["", "", "", "", ""],
-        "tooltip-format": "{time}"
-	}
+        "tooltip-format": "{time}",
+		
+	},
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+      }
 }
