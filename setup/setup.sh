@@ -28,4 +28,5 @@ cd ~/plankton
 stow hypr waybar starship zsh wofi nvim nwg-dock-hyprland ghostty
 
 chsh -s $(which zsh)
+clear
 nitch
