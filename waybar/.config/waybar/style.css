@@ -167,3 +167,18 @@ window#waybar.hidden {
 #mode, #idle_inhibitor, #custom-media, #mpd {
     padding: 0 10px;
 }
+
+#custom-logout {
+    background-color: #282c34;
+    color: #e06c75;
+    padding: 0 10px;
+    border-radius: 5px;
+    margin-top: 4px;    /* Example top margin */
+    margin-bottom: 4px; /* Example bottom margin */
+    margin-right: 10px; /* <-- ADD THIS LINE for spacing on the right */
+}
+
+#custom-logout:hover {
+    background-color: #f44336;
+    color: #282c34;
+}
