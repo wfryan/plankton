@@ -14,7 +14,7 @@ cd ~
 echo "Beginning install of sysyem packages. ZSH, hyprland, etc. \n"
 yay -S --noconfirm --needed zsh zsh-autosuggestions zsh-syntax-highlighting
 yay -S --noconfirm --needed neovim tmux ripgrep fd fzf bat exa tree btop jq curl wget unzip zip stow less ffmpeg
-yay -S --noconfirm --needed hyprland hyprlock hyprpaper
+yay -S --noconfirm --needed hyprland hyprlock hyprpaper hypridle
 yay -S --noconfirm --needed waybar grimblast wofi wl-clipboard ghostty starship nwg-dock-hyprland wlogout
 echo "Installing and flushing fonts\n"
 yay -S --noconfirm --needed ttf-font-awesome ttf-jetbrains-mono-nerd ttf-firacode-nerd ttf-hack-nerd fontconfig
