@@ -35,7 +35,6 @@ return {
 		event = "VeryLazy",
 		version = false, -- set this if you want to always pull the latest change
 		opts = {
-			debug = true,
 			-- add any opts here
 			mode = "agentic",
 			provider = "copilot",
@@ -45,8 +44,10 @@ return {
 				enable_cursor_planning_mode = true, -- enable cursor planning mode!
 				auto_suggestions = false,
 			},
-			copilot = {
-				model = "gpt-4.1",
+			providers = {
+				copilot = {
+					model = "gpt-4.1",
+				},
 			},
 			mappings = {
 				sidebar = {

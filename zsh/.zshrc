@@ -7,4 +7,13 @@ export HISTSIZE=100000
 export SAVEHIST="$HISTSIZE"
 export HISTFILE=~/.zsh_history
 setopt inc_append_history
-source ~/vulkan/1.4.321.1/setup-env.sh
+export PATH="$PATH:/Users/williamryan/Documents/flutter/bin"
+
+# pnpm
+export PNPM_HOME="/Users/williamryan/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#source ~/vulkan/1.4.321.1/setup-env.sh
