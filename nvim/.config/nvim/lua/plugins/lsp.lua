@@ -54,6 +54,8 @@ return {
 					-- C/C++
 					"clangd",
 
+					-- Swift
+					"swiftls",
 					-- Docker
 					-- "hadolint",
 				},
@@ -66,19 +68,18 @@ return {
 		"artemave/workspace-diagnostics.nvim",
 	},
 	{
-        "neovim/nvim-lspconfig",
-        config = function()
-            local lspconfig = require('lspconfig')
-            lspconfig.sourcekit.setup {
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lspconfig = require('lspconfig')
+			lspconfig.swiftls.setup {
 				capabilities = {
-        workspace = {
-            didChangeWatchedFiles = {
-                dynamicRegistration = true,
-            },
-        },
-    },
+					workspace = {
+						didChangeWatchedFiles = {
+							dynamicRegistration = true,
+						},
+					},
+				},
 			}
-        end,
-    }
+		end,
+	}
 }
-

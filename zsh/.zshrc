@@ -9,6 +9,10 @@ export HISTFILE=~/.zsh_history
 setopt inc_append_history
 export PATH="$PATH:/Users/williamryan/Documents/flutter/bin"
 
+alias wt3000="lsof -i tcp:3000"
+alias wt8080="lsof -i tcp:8080"
+alias wt4200="lsof -i tcp:4200"
+
 # pnpm
 export PNPM_HOME="/Users/williamryan/Library/pnpm"
 case ":$PATH:" in

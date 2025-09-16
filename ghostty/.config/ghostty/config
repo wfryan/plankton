@@ -42,5 +42,5 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = OneHalfDark
+theme = Atom One Dark
 background-opacity = 0.8
