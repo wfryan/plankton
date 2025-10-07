@@ -23,10 +23,11 @@ echo "Installing networking and audio packages\n"
 yay -S --noconfirm --needed networkmanager networkmanager-dmenu pavucontrol sof-firmware alsa-firmware
 echo "Installing Dolphin, wallpaper engine, Firefox, Zen Browser, Steam, Spotify, Webcord/Discord\n"
 yay -S --noconfirm --needed linux-wallpaperengine dolphin firefox zen-browser-bin steam spotify webcord discord
-yay -S go nerdfetch nitch
+yay -S --noconfirm --needed go nerdfetch nitch zoxide
+git clone https://github.com/wfryan/plankton.git
 cd ~/plankton
 stow hypr waybar starship zsh wofi nvim nwg-dock-hyprland ghostty
 
 chsh -s $(which zsh)
 clear
-nitch
+sudo systemctl reboot
