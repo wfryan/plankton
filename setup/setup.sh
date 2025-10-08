@@ -22,7 +22,7 @@ fc-cache -f -v
 echo "Installing networking and audio packages\n"
 yay -S --noconfirm --needed networkmanager networkmanager-dmenu pavucontrol sof-firmware alsa-firmware
 echo "Installing Dolphin, wallpaper engine, Firefox, Zen Browser, Steam, Spotify, Webcord/Discord\n"
-yay -S --noconfirm --needed linux-wallpaperengine dolphin firefox zen-browser-bin steam spotify webcord discord
+yay -S --noconfirm --needed linux-wallpaperengine dolphin firefox zen-browser steam spotify webcord discord
 yay -S --noconfirm --needed go nerdfetch nitch zoxide
 git clone https://github.com/wfryan/plankton.git
 cd ~/plankton
