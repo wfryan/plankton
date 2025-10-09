@@ -29,7 +29,7 @@ fc-cache -f -v
 echo "Installing networking and audio packages\n"
 yay -S --noconfirm --needed networkmanager networkmanager-dmenu pavucontrol sof-firmware alsa-firmware
 echo "Installing Dolphin, wallpaper engine, Firefox, Zen Browser, Steam, Spotify, Discord\n"
-yay -S --noconfirm --needed linux-wallpaperengine dolphin firefox zen-browser steam spotify discord
+yay -S --noconfirm --needed linux-wallpaperengine dolphin firefox zen-browser-bin steam spotify discord
 yay -S --noconfirm --needed go nerdfetch nitch zoxide
 
 chsh -s $(which zsh)
